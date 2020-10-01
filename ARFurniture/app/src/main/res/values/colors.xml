@@ -3,4 +3,14 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+    <color name="blue">#02A194</color>
+    <color name="black">#DD0C0C0C</color>
+    <color name="white">#DDDDDD</color>
+    <color name="pink">#FFE6E6</color>
+    <color name="titlebackgroundcolor">#FAFFC9</color>
+    <color name="colorTerm">#1a53ff</color>
+    <color name="overall">#ffe6e6</color>
+    <color name="login_sign_up">#4D2600</color>
+<!--    <color name="black">#000000</color>-->
+    <color name="sign_up">#333131</color>
 </resources>

@@ -1,3 +1,41 @@
 <resources>
     <string name="app_name">ARFurniture</string>
+    <string name="image1">image1</string>
+    <string name="silicus">SILICUS</string>
+    <string name="TIMBER">TIMBER</string>
+    <string name="ENVELO">ENVELO</string>
+    <string name="CHANEL">CHANEL</string>
+    <string name="silicusprice">$239</string>
+    <string name="TIMBERprice">$1299</string>
+    <string name="ENVELOprice">$523</string>
+    <string name="CHANELprice">$329</string>
+    <string name="SILICUSDescribe">Silicus Pink Oblong Coffee Table</string>
+    <string name="TIMBERDescribe">Timber Pebble Gray Sofa</string>
+    <string name="ENVELODescribe">Envelo 48" Media Unit</string>
+    <string name="CHANELDescribe">Zola Volcanic Gray Dining Chair</string>
+    <string name="name">name</string>
+    <string name="star">       4.8 Stars | 634 Reviews</string>
+    <string name="retail">Retail $500 - You save $101</string>
+    <string name="intro">With over 1000 products to choose from, w</string>
+    <string name="description">description</string>
+    <string name="price">price</string>
+    <string name="back">back</string>
+
+    <string name="logo_name">AR Furniture</string>
+    <string name="login">Log in</string>
+    <string name="account">Account</string>
+    <string name="password">Password</string>
+    <string name="term">I\'ve read and accept the terms &amp; conditions</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="forget_password">Forget Password</string>
+    <string name="help">Help</string>
+    <string name="condition">term &amp; condition</string>
+    <string name="welcome">Welcome to AR Furniture</string>
+    <string name="enter">Enter...</string>
+    <string name="email">Email Address</string>
+    <string name="phone">Phone Number</string>
+    <string name="verification">Verification Code</string>
+    <string name="accept">I have accept the terms and conditions</string>
+    <string name="send_code">Send Code</string>
+    <string name="return_btn">Return</string>
 </resources>
