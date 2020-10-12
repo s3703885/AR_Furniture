@@ -19,6 +19,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class CartActivity extends AppCompatActivity {
     private Collection<String> products;
@@ -198,13 +200,15 @@ public class CartActivity extends AppCompatActivity {
         findViewById(R.id.btn_checkout).setOnClickListener(new View.OnClickListener() {
             AlertDialog.Builder builder = new AlertDialog.Builder(CartActivity.this);
             @Override
+            // 整个onclick 复制
             public void onClick(View view) {
-                builder.setTitle("Successful");
-                builder.setMessage("Payment ");
-                builder.setPositiveButton("Keep Shopping", new DialogInterface.OnClickListener() {
+
+                builder.setTitle("Wanna checkout ?");
+                builder.setMessage("Total Price: $" + totalPrice());
+                builder.setPositiveButton("check out", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Intent home = new Intent(CartActivity.this, MainActivity1.class);
+                        Intent home = new Intent(CartActivity.this, Payment.class);
                         startActivity(home);
                     }
                 });
@@ -216,30 +220,30 @@ public class CartActivity extends AppCompatActivity {
     }
     public void showProduct(ImageButton imageButton,String product,ImageButton btn_cancel,TextView title,TextView price){
 
-            if (product.equalsIgnoreCase("SILICUS")) {
-                imageButton.setBackground(getDrawable(R.drawable.a1601104273));
-                title.setText("SILICUS");
-                price.setText("Price: $239");
-                btn_cancel.setBackground(getDrawable(R.drawable.ic_baseline_close_24));
-                imageButton.setContentDescription("added");
-            } else if (product.equalsIgnoreCase("CHANEL")) {
-                imageButton.setBackground(getDrawable(R.drawable.a1601106616));
-                title.setText("CHANEL");
-                price.setText("Price: $329");
-                btn_cancel.setBackground(getDrawable(R.drawable.ic_baseline_close_24));
-                imageButton.setContentDescription("added");
-            } else if (product.equalsIgnoreCase("TIMBER")) {
-                imageButton.setBackground(getDrawable(R.drawable.a1601106653));
-                title.setText("TIMBER");
-                price.setText("Price: $1299");
-                btn_cancel.setBackground(getDrawable(R.drawable.ic_baseline_close_24));
-                imageButton.setContentDescription("added");
-            } else if (product.equalsIgnoreCase("ENVELO")) {
-                imageButton.setBackground(getDrawable(R.drawable.a1601106758));
-                title.setText("ENVELO");
-                price.setText("Price: $523");
-                btn_cancel.setBackground(getDrawable(R.drawable.ic_baseline_close_24));
-                imageButton.setContentDescription("added");
+        if (product.equalsIgnoreCase("SILICUS")) {
+            imageButton.setBackground(getDrawable(R.drawable.a1601104273));
+            title.setText("SILICUS");
+            price.setText("Price: $239");
+            btn_cancel.setBackground(getDrawable(R.drawable.ic_baseline_close_24));
+            imageButton.setContentDescription("added");
+        } else if (product.equalsIgnoreCase("CHANEL")) {
+            imageButton.setBackground(getDrawable(R.drawable.a1601106616));
+            title.setText("CHANEL");
+            price.setText("Price: $329");
+            btn_cancel.setBackground(getDrawable(R.drawable.ic_baseline_close_24));
+            imageButton.setContentDescription("added");
+        } else if (product.equalsIgnoreCase("TIMBER")) {
+            imageButton.setBackground(getDrawable(R.drawable.a1601106653));
+            title.setText("TIMBER");
+            price.setText("Price: $1299");
+            btn_cancel.setBackground(getDrawable(R.drawable.ic_baseline_close_24));
+            imageButton.setContentDescription("added");
+        } else if (product.equalsIgnoreCase("ENVELO")) {
+            imageButton.setBackground(getDrawable(R.drawable.a1601106758));
+            title.setText("ENVELO");
+            price.setText("Price: $523");
+            btn_cancel.setBackground(getDrawable(R.drawable.ic_baseline_close_24));
+            imageButton.setContentDescription("added");
         }
     }
     @Override
@@ -259,5 +263,27 @@ public class CartActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
 
+    }
+    // 复制 totalPrice() getNumeric() new
+    public int totalPrice() {
+        int total = 0;
+        String price1 = getNumeric(textView1.getText().toString());
+        String price2 = getNumeric(textView3.getText().toString());
+        String price3 = getNumeric(textView5.getText().toString());
+        String price4 = getNumeric(textView7.getText().toString());
+
+        total = Integer.valueOf(price1) + Integer.valueOf(price2) + Integer.valueOf(price3) + Integer.valueOf(price4);
+        return total;
+    }
+
+    public static String getNumeric(String str) {
+        if (!str.isEmpty()) {
+            String regEx = "[^0-9]";
+            Pattern p = Pattern.compile(regEx);
+            Matcher m = p.matcher(str);
+            return m.replaceAll("").trim();
+        } else {
+            return "0";
+        }
     }
 }
